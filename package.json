@@ -6,11 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nuxt",
-    "build": "nuxt generate"
+    "build": "nuxt generate",
+    "fetch": "node fetch.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nuxt": "^2.8.1"
+    "nuxt": "^2.8.1",
+    "prismic-javascript": "^2.1.1"
   }
 }

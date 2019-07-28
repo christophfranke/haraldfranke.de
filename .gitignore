@@ -4,4 +4,4 @@ dist/
 node_modules/
 .nuxt/
 
-cms-data.json
+cms-data.js

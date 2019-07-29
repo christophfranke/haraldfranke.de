@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import Prismic from 'prismic-javascript'
 
-import content from '../cms-data'
+const apiEndpoint = 'https://haraldfranke-de.cdn.prismic.io/api/v2'
+
 
 export default () => new Vuex.Store({
   getters: {
@@ -14,11 +16,20 @@ export default () => new Vuex.Store({
       .map(primary => primary.menu)
   },
   state: {
-    content
+    content: {}
   },
   actions: {    
     nuxtServerInit({ state }) {
-      Vue.set(state, 'content', content)
+      return Prismic.getApi(apiEndpoint)
+        .then(api => api.query('', { pageSize : 100 }))
+        .then(response => {
+          if (response.total_pages > 1) {
+            console.error('There are more results than fit into first response page. This will lead to missing cms data. Do another api request for the next page to fix this.')
+          }
+          return response.results
+        }).then(content => {
+          Vue.set(state, 'content', content)
+        })
     },
   }
 })

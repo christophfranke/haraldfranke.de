@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :id="primary.menu">
     <RichText :content="primary.title" />
     <RichText :content="primary.text" />
     <div class="grid" v-for="(item, index) in items" :key="index">
@@ -17,7 +17,7 @@
 import components from '../components'
 
 export default {
-  name: 'Poem',
+  name: 'PoeticFotography',
   components,
   props: {
     primary: {

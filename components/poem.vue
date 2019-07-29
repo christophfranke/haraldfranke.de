@@ -1,5 +1,5 @@
 <template>
-  <div class="poems">
+  <div class="poems" :id="primary.menu">
     <RichText :content="primary.title" />
     <div v-for="(item, index) in items" :key="index">
       <RichText :content="item.content" />

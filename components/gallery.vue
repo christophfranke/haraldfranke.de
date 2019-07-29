@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :id="primary.menu">
     <RichText :content="primary.title" />
 
     <div class="thumbnails">

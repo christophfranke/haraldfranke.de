@@ -1,5 +1,5 @@
 <template>
-  <div class="cms-content" v-html="html" />
+  <div class="cms-content" :class="className" v-html="html" />
 </template>
 
 <script>
@@ -12,6 +12,10 @@
         type: Array,
         required: true,
       },
+      className: {
+        type: String,
+        required: false
+      }
     },
 
     computed: {

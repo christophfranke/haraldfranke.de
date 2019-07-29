@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :id="primary.menu">
     <RichText :content="primary.title" />
     <RichText :content="primary.content" />
   </div>

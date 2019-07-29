@@ -1,10 +1,10 @@
 <template>
-  <div class="grid">
+  <div class="grid" :id="primary.menu">
     <div class="left">
       <PrismicImage :image="primary.image" />
     </div>
     <div class="right">
-      <RichText :content="primary.content" />
+      <RichText :content="primary.content" className="no-margin-top"/>
     </div>
   </div>
 </template>
@@ -30,6 +30,7 @@ export default {
 
 <style scoped>
 .grid {
+  margin-top: 150px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -39,5 +40,11 @@ export default {
 }
 .right {
   grid-column: 2;
+}
+</style>
+
+<style>
+.no-margin-top > * {
+  margin-top: 0;
 }
 </style>

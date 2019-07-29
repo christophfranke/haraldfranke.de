@@ -1,7 +1,12 @@
 <template>
-  <div class="main">
-    <Slice :slice="slice" v-for="(slice, index) in slices" :key="index" />
-    <hr>
+  <div>
+    <Navigation />
+    <div class="main">
+      <div v-for="(slice, index) in slices" :key="index">
+        <Slice :slice="slice" />
+        <hr>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -19,7 +24,14 @@ export default {
 </script>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 20px;
+  line-height: 32px;
   background-color: rgb(155, 155, 155);
   color: white;
 }
@@ -30,13 +42,31 @@ form input{
 
 img{
   border: 6px solid #880000;
-  width: 80%;
+  width: calc(80% - 12px);
   height: auto;
+  margin-bottom: 50px;
+}
+
+h1 {
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+hr {
+  margin-top: 80px;
+}
+
+p {
+  margin: 40px 0;
+}
+
+p:first-child {
+  margin-top: 0;
 }
 
 .main {
-  max-width: 1280px;
-  width: 95vw;
+  max-width: 1000px;
+  width: 80vw;
   margin: auto;
 }
 

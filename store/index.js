@@ -7,7 +7,11 @@ export default () => new Vuex.Store({
   getters: {
     content: ({ content }) => content,
     home: (state, { content }) => content.find(doc => doc.type === 'home').data,
-    slices: (state, { home }) => home.body
+    slices: (state, { home }) => home.body,
+    navEntries: (state, { slices }) => slices
+      .map(slice => slice.primary)
+      .filter(primary => primary.menu)
+      .map(primary => primary.menu)
   },
   state: {
     content

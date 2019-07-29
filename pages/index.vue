@@ -29,11 +29,17 @@ html {
 }
 
 body {
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Times', serif;
+  font-weight: 300;
   font-size: 20px;
-  line-height: 32px;
+  line-height: 1.5;
   background-color: rgb(155, 155, 155);
   color: white;
+}
+
+h1, h2, h3, h4, h5, h6, nav {
+  font-weight: normal;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
 form input{

@@ -1,10 +1,7 @@
 <template>
-  <div class="poems">
+  <div>
     <RichText :content="primary.title" />
-    <div v-for="(item, index) in items" :key="index">
-      <RichText :content="item.content" />
-      <PrismicImage :image="item.image" />
-    </div>
+    <RichText :content="primary.content" />
   </div>
 </template>
 
@@ -12,7 +9,7 @@
 import components from '../components'
 
 export default {
-  name: 'Poem',
+  name: 'Prices',
   components,
   props: {
     primary: {
@@ -27,8 +24,3 @@ export default {
 }
 </script>
 
-<style scoped>
-.poems {
-  text-align: center;
-}
-</style>

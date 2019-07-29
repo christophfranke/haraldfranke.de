@@ -1,13 +1,12 @@
 <template>
   <div>
     <RichText :content="primary.title" />
-    <RichText :content="primary.text" />
-    <div class="grid" v-for="(item, index) in items" :key="index">
+    <div class="grid">
       <div class="left">
-        <PrismicImage :image="item.image" />
+        <RichText :content="primary.text" />
       </div>
       <div class="right">
-        <RichText :content="primary.text" />
+        <PrismicImage :image="primary.image" />
       </div>
     </div>
   </div>
@@ -17,7 +16,7 @@
 import components from '../components'
 
 export default {
-  name: 'Poem',
+  name: 'News',
   components,
   props: {
     primary: {
@@ -35,14 +34,14 @@ export default {
 <style scoped>
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr ;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .left {
-  grid-column: 1;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
-
 .right {
-  grid-column: 2;
+  grid-column: 3;
 }
 </style>

@@ -3,19 +3,15 @@
     <RichText :content="primary.title" />
 
     <div class="thumbnails">
-      <div v-for="(preview, index) in previewImages"
-           @click="show(index)">
-        <PrismicImage
-          :key="index"
-          :image="preview" />
+      <div v-for="(preview, index) in previewImages" :key="index">
+        <no-ssr placeholder="Loading...">
+          <VuePureLightbox
+            :images="imageUrls"
+            :thumbnail="preview.url"
+            :openAtIndex="index" />
+        </no-ssr>
       </div>
     </div>
-    <no-ssr placeholder="Loading...">
-      <VuePureLightbox
-        :images="imageUrls"
-        :value="visible"
-        :openAtIndex="index" />
-    </no-ssr>
   </div>
 </template>
 

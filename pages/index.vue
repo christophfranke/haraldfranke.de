@@ -1,19 +1,18 @@
 <template>
   <div>
-    <RichText :content="content" />
+    <Slice :slice="slice" v-for="(slice, index) in slices" :key="index" />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import components from '../components'
 
 export default {
   name: 'Home',
   components,
   computed: {
-    content() {
-      return this.$store.getters.home
-    }
+    ...mapGetters(['home', 'slices']),
   }
 }
 </script>

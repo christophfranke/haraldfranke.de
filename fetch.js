@@ -1,7 +1,7 @@
 const Prismic = require('prismic-javascript')
 const fs = require('fs')
 
-const apiEndpoint = 'https://nuaflow-de.cdn.prismic.io/api/v2'
+const apiEndpoint = 'https://haraldfranke-de.cdn.prismic.io/api/v2'
 const targetFile = `${__dirname}/cms-data.js`
  
 Prismic.getApi(apiEndpoint)

@@ -14,6 +14,7 @@
   "dependencies": {
     "nuxt": "^2.8.1",
     "prismic-dom": "^2.1.0",
-    "prismic-javascript": "^2.1.1"
+    "prismic-javascript": "^2.1.1",
+    "vue-pure-lightbox": "^3.1.0"
   }
 }

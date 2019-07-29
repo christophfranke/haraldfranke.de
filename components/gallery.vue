@@ -1,25 +1,34 @@
 <template>
   <div>
     <RichText :content="primary.title" />
-    <RichText :content="primary.title" />
+
     <div class="thumbnails">
-      <PrismicImage
-        v-for="(preview, index) in previewImages"
-        :key="index"
-        :image="preview"
-        @click="show(index)" />
+      <div v-for="(preview, index) in previewImages"
+           @click="show(index)">
+        <PrismicImage
+          :key="index"
+          :image="preview" />
+      </div>
     </div>
     <no-ssr placeholder="Loading...">
+      <VuePureLightbox
+        :images="imageUrls"
+        :value="visible"
+        :openAtIndex="index" />
     </no-ssr>
   </div>
 </template>
 
 <script>
+import VuePureLightbox from 'vue-pure-lightbox'
 import components from '../components'
 
 export default {
   name: 'Gallery',
-  components,
+  components: {
+    ...components,
+    VuePureLightbox
+  },
   props: {
     primary: {
       type: Object,
@@ -51,6 +60,7 @@ export default {
 
   methods: {
     show(index) {
+      console.log('hallo', index)
       this.visible = true
       this.index = index
     }
@@ -68,5 +78,6 @@ export default {
 .thumbnails img {
   width: 15%;
   min-width: 125px;
+  min-height: 125px;
 }
 </style>

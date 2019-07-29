@@ -10,7 +10,6 @@
         <RichText :content="primary.text" />
       </div>
     </div>
-    poetische photo
   </div>
 </template>
 

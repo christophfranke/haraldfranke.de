@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="poems">
     <RichText :content="primary.title" />
     <div v-for="(item, index) in items" :key="index">
       <RichText :content="item.content" />
@@ -26,3 +26,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.poems {
+  text-align: center;
+}
+</style>

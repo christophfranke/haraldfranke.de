@@ -3,7 +3,7 @@
     <RichText :content="primary.title" />
 
     <div class="thumbnails">
-      <div v-for="(preview, index) in previewImages" :key="index">
+      <div v-for="(preview, index) in previewImages" :key="index" class="nail">
         <no-ssr placeholder="Loading...">
           <VuePureLightbox
             :images="imageUrls"
@@ -68,12 +68,16 @@ export default {
 .thumbnails {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
+.nail {
+  min-width: 150px;
+  width: 20%;
+}
+</style>
 
-.thumbnails img {
-  width: 15%;
-  min-width: 125px;
-  min-height: 125px;
+<style>
+.nail img {
+  border: none;
 }
 </style>

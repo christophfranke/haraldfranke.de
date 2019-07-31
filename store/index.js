@@ -15,7 +15,7 @@ export default () => new Vuex.Store({
   state: {
     content: {}
   },
-  actions: {    
+  actions: {
     nuxtServerInit({ state }, { req }) {
       return Api({ req }).then(api => api.query('', { pageSize : 100 }))
         .then(response => {

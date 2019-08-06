@@ -23,10 +23,6 @@ export default {
     layout() {
       return layoutClass(this.primary.layout)
     }
-  },
-
-  mounted() {
-    console.log(this.primary)
   }
 }
 </script>

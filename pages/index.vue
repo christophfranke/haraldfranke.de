@@ -24,10 +24,6 @@ export default {
     slices() {
       return this.$store.getters.slices()
     },
-  },
-
-  mounted() {
-    console.log(this.page)
   }
 }
 </script>

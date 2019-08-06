@@ -8,6 +8,7 @@ export default () => new Vuex.Store({
   getters: {
     content: ({ content }) => content,
     home: (state, { content }) => content.find(doc => doc.type === 'home').data,
+    shop: (state, { content }) => content.find(doc => doc.type === 'shop').data,
     pages: (state, { content }) => content.filter(doc => doc.type === 'page'),
     page: (state, { pages }) => slug => {
       const page = pages.find(page => page.uid === slug)
@@ -33,7 +34,6 @@ export default () => new Vuex.Store({
           }
           return response.results
         }).then(content => {
-          console.log(content)
           Vue.set(state, 'content', content)
         })
     },

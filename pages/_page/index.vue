@@ -33,10 +33,6 @@ export default {
     if (!store.getters.page(params.page)) {
       error({ statusCode: 404, message: 'Page not found' })
     }
-  },
-
-  mounted() {
-    console.log(this.page)
   }
 }
 </script>

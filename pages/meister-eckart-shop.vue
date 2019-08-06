@@ -1,6 +1,7 @@
 <template>
   <div>
     <Navigation />
+    <RichText :content="page.title" className="full-width" />
     <div class="ec-cart-widget"></div>
     <div id="my-search-17735022"></div>
     <div id="my-categories-17735022"></div>
@@ -14,6 +15,12 @@ import components from '~/components'
 export default {
   name: 'Shop',
   components,
+
+  computed: {    
+    page() {
+      return this.$store.getters.shop
+    }
+  },
 
   mounted() {
     Ecwid.init()

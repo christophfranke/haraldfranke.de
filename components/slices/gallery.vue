@@ -53,14 +53,9 @@ export default {
 
   methods: {
     show(index) {
-      console.log('hallo', index)
       this.visible = true
       this.index = index
     }
-  },
-
-  mounted() {
-    console.log(this.images)
   }
 }
 </script>

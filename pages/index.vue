@@ -29,17 +29,17 @@ html {
 }
 
 body {
-  font-family: 'Times', serif;
+  font-family: 'Calibri', serif;
   font-weight: 300;
   font-size: 20px;
   line-height: 1.5;
-  background-color: rgb(155, 155, 155);
+  background-color: rgb(102, 112, 94);
   color: white;
 }
 
-h1, h2, h3, h4, h5, h6, nav {
+h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Lucida Calligraphy', sans-serif;
 }
 
 form input{

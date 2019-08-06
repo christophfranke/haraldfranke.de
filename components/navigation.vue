@@ -3,8 +3,8 @@
     <a @click="toggleMenu" href="#" class="nav-menu-toggle">x</a>
     <nav :class="visible && 'visible'">
       <ul>
-        <li v-for="(name, index) in navEntries">
-          <a :href="`#${name}`" v-html="nobreak(name)" @click="selectMenu"></a> 
+        <li v-for="(entry, index) in navigationEntries">
+          <a :href="entry.href" v-html="entry.title" @click="selectMenu"></a> 
         </li>
       </ul>
     </nav>
@@ -24,6 +24,13 @@ export default {
 
   computed: {
     ...mapGetters(['navEntries']),
+
+    navigationEntries() {
+      return this.navEntries.map(entry => ({
+        href: entry === 'Meister Eckart Shop' ? '/meister-eckart-shop' : `#${entry}`,
+        title: this.nobreak(entry)
+      }))
+    }
   },
 
   methods: {

@@ -7,6 +7,7 @@
     <About :primary="slice.primary" :items="slice.items" v-else-if="slice.slice_type === 'about'" />
     <Prices :primary="slice.primary" :items="slice.items" v-else-if="slice.slice_type === 'prices'" />
     <Imprint :primary="slice.primary" :items="slice.items" v-else-if="slice.slice_type === 'imprint'" />
+    <template v-else-if="slice.slice_type === 'shop'"></template>
     <span v-else>
       {{ slice.slice_type }}
     </span>
@@ -25,7 +26,6 @@ export default {
     Gallery: () => import('./gallery.vue'),
     News: () => import('./news.vue'),
     About: () => import('./about.vue'),
-    Prices: () => import('./prices.vue'),
     Imprint: () => import('./imprint.vue'),
   },
   props: {

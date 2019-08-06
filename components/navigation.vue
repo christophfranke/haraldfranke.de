@@ -35,7 +35,7 @@ export default {
 
   methods: {
     nobreak(s) {
-      return s.replace(' ', '&nbsp;')
+      return s.replace(/ /g, '&nbsp;')
     },
     toggleMenu(e) {
       e.preventDefault()

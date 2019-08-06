@@ -1,0 +1,29 @@
+.page-enter-active, .page-leave-active {
+  transition: opacity .35s
+}
+.page-enter, .page-leave-active {
+  opacity: 0
+}
+
+.main {
+  max-width: 1000px;
+  width: 80vw;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 2.5vw 1fr;
+  grid-row-gap: 50px;
+}
+
+.full-width {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.left-half {
+  grid-column: 1;
+}
+
+.right-half {
+  grid-column: 3;
+}

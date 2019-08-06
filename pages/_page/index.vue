@@ -18,7 +18,6 @@ export default {
   name: 'Page',
   components,
   computed: {
-    ...mapGetters(['home', 'slices']),
     slug() {
       return this.$router.currentRoute.params.page
     },
@@ -43,28 +42,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../style/global';
-
-.main {
-  max-width: 1000px;
-  width: 80vw;
-  margin: auto;
-
-  display: grid;
-  grid-template-columns: 1fr 2.5vw 1fr;
-  grid-row-gap: 50px;
-}
-
-.full-width {
-  grid-column-start: 1;
-  grid-column-end: 4;
-}
-
-.left-half {
-  grid-column: 1;
-}
-
-.right-half {
-  grid-column: 3;
-}
+@import '../../style/global.scss';
 </style>

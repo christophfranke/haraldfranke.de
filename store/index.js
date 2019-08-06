@@ -33,6 +33,7 @@ export default () => new Vuex.Store({
           }
           return response.results
         }).then(content => {
+          console.log(content)
           Vue.set(state, 'content', content)
         })
     },

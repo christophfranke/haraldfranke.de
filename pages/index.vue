@@ -3,7 +3,7 @@
     <Navigation />
     <div class="main">
       <div v-for="(slice, index) in slices" :key="index">
-        <Slice :slice="slice" />
+        {{ slice.slice_type }}
         <hr>
       </div>
     </div>
@@ -12,13 +12,16 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import components from '../components'
+import components from '~/components'
 
 export default {
   name: 'Home',
   components,
   computed: {
-    ...mapGetters(['home', 'slices']),
+    ...mapGetters(['home']),
+    slices() {
+      return this.$store.getters.slices()
+    }
   }
 }
 </script>

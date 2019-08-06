@@ -1,6 +1,6 @@
 <template>
   <div :id="primary.menu">
-    <RichText :content="primary.title" />
+    <RichText :content="primary.title" :className="full-width" />
 
     <div class="thumbnails">
       <div v-for="(preview, index) in previewImages" :key="index" class="nail">
@@ -17,7 +17,7 @@
 
 <script>
 import VuePureLightbox from 'vue-pure-lightbox'
-import components from '../components'
+import components from '~/components'
 
 export default {
   name: 'Gallery',

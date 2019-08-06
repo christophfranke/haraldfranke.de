@@ -4,6 +4,7 @@
 
 <script>
   import PrismicDOM from 'prismic-dom'
+  import linkResolver from '~/util/linkResolver'
 
   export default {
     name: 'RichText',
@@ -20,7 +21,7 @@
 
     computed: {
       html() {
-        return PrismicDOM.RichText.asHtml(this.content)
+        return PrismicDOM.RichText.asHtml(this.content, linkResolver)
       },
     },
   }

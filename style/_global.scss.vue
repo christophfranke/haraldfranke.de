@@ -1,3 +1,5 @@
+@import 'fonts';
+
 html {
   scroll-behavior: smooth;
 }
@@ -9,6 +11,7 @@ body {
   line-height: 1.5;
   background-color: rgb(102, 112, 94);
   color: white;
+  padding-bottom: 150px;
 }
 
 html#ecwid_html body#ecwid_body {
@@ -41,43 +44,45 @@ html#ecwid_html body#ecwid_body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  text-align: center;
   font-weight: normal;
   font-family: 'Lucida Calligraphy', sans-serif;
+}
+
+h2 {
+  font-size: 26px;
+  text-align: left;
 }
 
 form input{
   color: black;
 }
 
-img{
-  border: 6px solid #880000;
-  width: calc(80% - 12px);
-  height: auto;
-  margin-bottom: 50px;
-}
 
 h1 {
-  margin-top: 150px;
-  margin-bottom: 50px;
+  margin-top: 100px;
 }
 
 hr {
-  margin-top: 80px;
+  margin-top: 30px;
 }
 
 p {
-  margin: 40px 0;
+  margin: 0;
 }
 
-p:first-child {
-  margin-top: 0;
+a {
+  text-decoration: underline;
+  color: white;
+  &:visited {
+    color: white;
+  }
+  &:hover {
+    filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.75));    
+    text-decoration: none;
+  }
 }
 
-.main {
-  max-width: 1000px;
-  width: 80vw;
-  margin: auto;
-}
 
 #nav ul li a{
   padding-right: 10px;

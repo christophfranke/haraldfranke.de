@@ -1,5 +1,5 @@
 <template>
-  <img :src="image.url" v-if="image.url">
+  <img :src="image.url" v-if="image.url" :class="className">
 </template>
 
 <script>
@@ -9,9 +9,13 @@
     name: 'PrismicImage',
     props: {
       image: {
-        // type: Array,
-        // required: true,
+        type: Object,
+        required: true,
       },
+      className: {
+        type: String,
+        default: ''
+      }
     },
   }
 </script>

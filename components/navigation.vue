@@ -26,6 +26,7 @@ export default {
     ...mapGetters(['navEntries']),
 
     navigationEntries() {
+      return []
       return this.navEntries.map(entry => ({
         href: entry === 'Meister Eckart Shop' ? '/meister-eckart-shop' : `#${entry}`,
         title: this.nobreak(entry)
@@ -48,7 +49,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 ul {
   margin: 0;
   padding: 0;

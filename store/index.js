@@ -6,7 +6,12 @@ export default () => new Vuex.Store({
   getters: {
     content: ({ content }) => content,
     home: (state, { content }) => content.find(doc => doc.type === 'home').data,
-    slices: (state, { home }) => home.body,
+    pages: (state, { content }) => content.filter(doc => doc.type === 'page'),
+    page: (state, { pages }) => slug => {
+      const page = pages.find(page => page.uid === slug)
+      return page && page.data
+    },
+    slices: (state, { page, home }) => slug => (slug ? page(slug) : home).body,
     navEntries: (state, { slices }) => slices
       .map(slice => slice.primary)
       .filter(primary => primary.menu)

@@ -1,5 +1,5 @@
 <template>
-  <img :src="image.url" v-if="image.url" :class="className">
+  <img :src="image.url" v-if="image.url" :class="className" :alt="image.alt">
 </template>
 
 <script>

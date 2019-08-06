@@ -1,16 +1,13 @@
 <template>
-  <div :id="primary.menu">
-    <RichText :content="primary.title" :className="full-width" />
-
-    <div class="thumbnails">
-      <div v-for="(preview, index) in previewImages" :key="index" class="nail">
-        <no-ssr placeholder="Loading...">
-          <VuePureLightbox
-            :images="imageUrls"
-            :thumbnail="preview.url"
-            :openAtIndex="index" />
-        </no-ssr>
-      </div>
+  <div class="thumbnails full-width">
+    <div v-for="(image, index) in images" :key="index" class="nail">
+      <span class="overlay">{{ image.alt }}</span>
+      <no-ssr :placeholder="image.alt">
+        <VuePureLightbox
+          :images="imageUrls"
+          :thumbnail="image.preview.url"
+          :openAtIndex="index" />
+      </no-ssr>
     </div>
   </div>
 </template>
@@ -60,24 +57,36 @@ export default {
       this.visible = true
       this.index = index
     }
+  },
+
+  mounted() {
+    console.log(this.images)
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .thumbnails {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 1.5vw;
+  grid-row-gap: 1.5vw;
 }
 .nail {
-  min-width: 150px;
-  width: 20%;
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  pointer-events: none;
+  font-size: 16px;
+  font-family: 'Lucida Calligraphy', sans-serif;
 }
 </style>
 
 <style>
-.nail img {
+.lightbox__thumbnail img {
   border: none;
 }
 </style>

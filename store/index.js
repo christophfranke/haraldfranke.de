@@ -33,7 +33,6 @@ export default () => new Vuex.Store({
           }
           return response.results
         }).then(content => {
-          console.log(content.find(doc => doc.type === 'site_navigation').data.pages)
           Vue.set(state, 'content', content)
         })
     },

@@ -1,4 +1,5 @@
 export default {
+  buildDir: 'public',
   head: {
     script: [{
       src: '/endpoint.js'

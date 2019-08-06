@@ -11,23 +11,33 @@ body {
   color: white;
 }
 
-html#ecwid_html body#ecwid_body .ec-size .ec-store {
-  * {
-    color: white !important;
+html#ecwid_html body#ecwid_body {
+  .ec-minicart__icon .icon-default path[stroke] {
+    stroke: white !important;
   }
 
-  a:hover div {
-    filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.75));    
-  }
+  .ec-size .ec-store {
+    * {
+      color: white !important;
+    }
 
-  .product-details img {
-    border: 6px solid #880000;
-    border-style: solid !important;
-    width: calc(100% - 12px) !important;
+    a:hover {
+      filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.75));    
+    }
+
+    .icon-default path[stroke] {
+      stroke: white !important;
+    }
+
+    .product-details img {
+      border: 6px solid #880000;
+      border-style: solid !important;
+      width: calc(100% - 12px) !important;
+    }
+     .grid-product__image-wrap {
+      border: 6px solid #880000;
+    }
   }
-   .grid-product__image-wrap {
-    border: 6px solid #880000;
-  }  
 }
 
 h1, h2, h3, h4, h5, h6 {

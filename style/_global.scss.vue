@@ -14,6 +14,13 @@ body {
   padding-bottom: 150px;
 }
 
+.page-enter-active, .page-leave-active {
+  transition: opacity .35s
+}
+.page-enter, .page-leave-active {
+  opacity: 0
+}
+
 html#ecwid_html body#ecwid_body {
   .ec-minicart__icon .icon-default path[stroke] {
     stroke: white !important;

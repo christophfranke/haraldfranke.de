@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navigation />
     <div class="ec-cart-widget"></div>
     <div id="my-search-17735022"></div>
     <div id="my-categories-17735022"></div>
@@ -8,9 +9,11 @@
 </template>
 
 <script>
+import components from '~/components'
 
 export default {
   name: 'Shop',
+  components,
 
   mounted() {
     Ecwid.init()

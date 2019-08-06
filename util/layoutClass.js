@@ -1,2 +1,2 @@
 export default s =>
-  s.replace(/ /g, '-').toLowerCase()
+  (s && s.replace(/ /g, '-').toLowerCase()) || 'full-width'

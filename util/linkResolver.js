@@ -1,6 +1,8 @@
 const resolve = doc => ({
   page: `/${doc.uid}`,
-  home: '/'
+  home: '/',
+  shop: '/meister-eckart-shop',
+  site_navigation: '/'
 })[doc.type]
 
 export default doc => {

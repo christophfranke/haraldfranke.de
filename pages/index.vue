@@ -1,10 +1,9 @@
 <template>
   <div>
     <Navigation />
-    <div class="main">
+    <div>
       <div v-for="(slice, index) in slices" :key="index">
         {{ slice.slice_type }}
-        <hr>
       </div>
     </div>
   </div>

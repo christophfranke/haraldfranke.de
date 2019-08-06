@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import Api from '~/util/api'
+import linkResolver from '~/util/linkResolver'
+
 
 export default () => new Vuex.Store({
   getters: {
@@ -12,10 +14,12 @@ export default () => new Vuex.Store({
       return page && page.data
     },
     slices: (state, { page, home }) => slug => (slug ? page(slug) : home).body,
-    navEntries: (state, { slices }) => slices
-      .map(slice => slice.primary)
-      .filter(primary => primary.menu)
-      .map(primary => primary.menu)
+    navigation: (state, { content }) => content.find(doc => doc.type === 'site_navigation').data.pages,
+    navEntries: (state, { navigation, page }) =>
+      navigation.map(navigation => ({
+        title: navigation.name[0].text || (navigation.page.uid && page(navigation.page.uid).title[0].text),
+        url: linkResolver(navigation.page)
+      })).filter(({ url }) => url)
   },
   state: {
     content: {}
@@ -29,6 +33,7 @@ export default () => new Vuex.Store({
           }
           return response.results
         }).then(content => {
+          console.log(content.find(doc => doc.type === 'site_navigation').data.pages)
           Vue.set(state, 'content', content)
         })
     },

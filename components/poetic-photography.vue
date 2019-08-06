@@ -7,7 +7,7 @@
         <PrismicImage :image="item.image" />
       </div>
       <div class="right">
-        <RichText :content="primary.text" />
+        <RichText :content="item.content" />
       </div>
     </div>
   </div>

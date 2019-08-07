@@ -1,12 +1,9 @@
 <template>
-  <div>
-    <Navigation />
-    <div class="main">
-      <RichText :content="page.title" className="full-width" />
-      <template v-for="(slice, index) in slices">
-        <Slice :slice="slice" :key="index" />
-      </template>
-    </div>
+  <div class="main">
+    <RichText :content="page.title" className="full-width" />
+    <template v-for="(slice, index) in slices">
+      <Slice :slice="slice" :key="index" />
+    </template>
   </div>
 </template>
 

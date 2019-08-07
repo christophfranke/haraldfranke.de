@@ -3,15 +3,13 @@
     <a @click="toggleMenu" href="#" class="nav-menu-toggle">
       <img :src="icon" class="menu-icon">
     </a>
-    <transition name="fade">
-      <nav v-if="visible" @click="closeMenu">
-        <ul>
-          <li v-for="(entry, index) in navEntries">
-            <nuxt-link :to="entry.url" v-html="entry.title"></nuxt-link>
-          </li>
-        </ul>
-      </nav>
-    </transition>
+    <nav :class="visible && 'visible'">
+      <ul>
+        <li v-for="(entry, index) in navEntries">
+          <nuxt-link :to="entry.url" v-html="entry.title"></nuxt-link>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 
@@ -73,23 +71,26 @@ li {
   display: inline;
   padding: 0 25px;
   border-right: 1px solid white;
+
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+    border-right: 0;
+  }
+  
+  a {
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+  }
+  a:hover {
+    filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.75));
+  }
 }
-li:first-child {
-  padding-left: 0;
-}
-li:last-child {
-  padding-right: 0;
-  border-right: 0;
-}
-li a {
-  font-size: 18px;
-  text-decoration: none;
-  color: white;
-  font-weight: normal;
-}
-a:hover {
-  filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.75));
-}
+
 
 .menu-icon {
   width: 35px;
@@ -102,10 +103,14 @@ a:hover {
   position: absolute;
   top: 20px;
   right: 20px;
-  display: inline;
   z-index: 11;
 }
+
 @media (max-width: 1000px) {
+  .nav-menu-toggle {
+    display: inline;
+  }
+
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -131,9 +136,15 @@ a:hover {
     align-items: center;
     justify-content: center;
     overflow-y: scroll;
-  }
-  nav {
     background-color: adjust-color($background-color, $alpha: -0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s;
+
+    &.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 }
 </style>

@@ -44,18 +44,30 @@ export default {
   width: 100%;
 }
 
+
 html#ecwid_html body#ecwid_body {
   .ec-minicart__icon .icon-default path[stroke] {
     stroke: white !important;
   }
 
   .ec-size .ec-store {
+    .form-control--secondary * {
+      color: $background-color !important;
+    }
+
     * {
       color: white !important;
     }
 
     a:hover {
       filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.75));    
+    }
+
+    .form-control {
+      background: rgba(0, 0, 0, 0.05) !important;
+      &--radio, &--checkbox {
+        background: transparent !important;
+      }
     }
 
     .icon-default path[stroke] {

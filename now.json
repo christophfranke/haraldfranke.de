@@ -1,13 +1,13 @@
 {
   "version": 2,
+  "env": {
+    "NOW_DEPLOYMENT": true
+  },
   "builds": [
     {
       "src": "nuxt.config.js",
       "use": "@nuxtjs/now-builder",
       "config": {},
-      "env": {
-        "NOW_DEPLOYMENT": true
-      }
     }
   ]
 }

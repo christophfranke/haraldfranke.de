@@ -1,7 +1,7 @@
 {
   "version": 2,
   "env": {
-    "NOW_DEPLOYMENT": true
+    "NOW_DEPLOYMENT": "true"
   },
   "builds": [
     {

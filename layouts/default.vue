@@ -38,8 +38,6 @@ export default {
       xCategoriesV2("id=my-categories-17735022")
       xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-17735022")
     }
-
-    window.layout = this
   }
 }
 </script>

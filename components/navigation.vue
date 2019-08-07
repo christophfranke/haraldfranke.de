@@ -3,13 +3,15 @@
     <a @click="toggleMenu" href="#" class="nav-menu-toggle">
       <img :src="icon" class="menu-icon">
     </a>
-    <nav :class="visible && 'visible'">
-      <ul>
-        <li v-for="(entry, index) in navEntries">
-          <nuxt-link :to="entry.url" v-html="entry.title"></nuxt-link>
-        </li>
-      </ul>
-    </nav>
+    <transition name="fade">
+      <nav v-if="visible" @click="closeMenu">
+        <ul>
+          <li v-for="(entry, index) in navEntries">
+            <nuxt-link :to="entry.url" v-html="entry.title"></nuxt-link>
+          </li>
+        </ul>
+      </nav>
+    </transition>
   </div>
 </template>
 
@@ -39,8 +41,11 @@ export default {
       e.preventDefault()
       this.visible = !this.visible
     },
+    closeMenu() {
+      this.visible = false;
+    },
     selectMenu() {
-      this.visible = false
+      this.closeMenu()
     },
   }
 }
@@ -48,6 +53,14 @@ export default {
 
 <style scoped lang="scss">
 @import '../style/global.scss';
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .35s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
 
 ul {
   margin: 0;
@@ -89,6 +102,8 @@ a:hover {
   position: absolute;
   top: 20px;
   right: 20px;
+  display: inline;
+  z-index: 11;
 }
 @media (max-width: 1000px) {
   ul {
@@ -98,30 +113,27 @@ a:hover {
   }
   li {
     width: 100%;
-    padding: 15px 0;
+    padding: 0;
+    margin: 0;
     border: none;
   }
-  a {
-    font-size: 26px;
+  li a {
+    font-size: 36px;
   }
-  .navigation {
+  nav {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
   }
   nav {
     background-color: adjust-color($background-color, $alpha: -0.1);
-    display: none;
-    width: 100%;
-    height: 100%;
-  }
-  nav.visible {
-    display: block;
-  }
-  .nav-menu-toggle {
-    display: inline;
   }
 }
 </style>

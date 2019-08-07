@@ -1,9 +1,9 @@
 <template>
   <div>
-    <Navigation />
-    <RichText :content="page.title" className="full-width" />
     <div class="ec-cart-widget"></div>
+    <Navigation />
     <div id="my-search-17735022"></div>
+    <RichText :content="page.title" className="full-width" />
     <div id="my-categories-17735022"></div>
     <div id="my-store-17735022"></div>
   </div>
@@ -33,6 +33,16 @@ export default {
 
 <style lang="scss">
 @import '../style/global.scss';
+
+.ec-cart-widget {
+  float: left;
+}
+
+#my-search-17735022 {
+  margin-top: 20px;
+  clear: both;
+  width: 100%;
+}
 
 html#ecwid_html body#ecwid_body {
   .ec-minicart__icon .icon-default path[stroke] {

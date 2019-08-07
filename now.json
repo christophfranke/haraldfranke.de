@@ -4,7 +4,10 @@
     {
       "src": "nuxt.config.js",
       "use": "@nuxtjs/now-builder",
-      "config": {}
+      "config": {},
+      "env": {
+        "NOW_DEPLOYMENT": true
+      }
     }
   ]
 }

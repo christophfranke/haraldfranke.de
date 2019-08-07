@@ -1,6 +1,8 @@
 <template>
   <div class="navigation">
-    <a @click="toggleMenu" href="#" class="nav-menu-toggle">x</a>
+    <a @click="toggleMenu" href="#" class="nav-menu-toggle">
+      <img :src="icon" class="menu-icon">
+    </a>
     <nav :class="visible && 'visible'">
       <ul>
         <li v-for="(entry, index) in navEntries">
@@ -24,6 +26,9 @@ export default {
 
   computed: {
     ...mapGetters(['navEntries']),
+    icon() {
+      return this.visible ? '/close.svg' : '/menu.svg'
+    }
   },
 
   methods: {
@@ -36,12 +41,14 @@ export default {
     },
     selectMenu() {
       this.visible = false
-    }
+    },
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import '../style/global.scss';
+
 ul {
   margin: 0;
   padding: 0;
@@ -61,7 +68,7 @@ li:last-child {
   padding-right: 0;
   border-right: 0;
 }
-a {
+li a {
   font-size: 18px;
   text-decoration: none;
   color: white;
@@ -71,13 +78,19 @@ a:hover {
   filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.75));
 }
 
+.menu-icon {
+  width: 35px;
+  height: 35px;
+  border: none;
+}
+
 .nav-menu-toggle {
   display: none;
   position: absolute;
   top: 20px;
   right: 20px;
 }
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -99,7 +112,7 @@ a:hover {
     bottom: 0;
   }
   nav {
-    background-color: rgb(155, 155, 155, 0.9);
+    background-color: adjust-color($background-color, $alpha: -0.1);
     display: none;
     width: 100%;
     height: 100%;

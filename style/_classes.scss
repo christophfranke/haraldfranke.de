@@ -13,11 +13,25 @@
   display: grid;
   grid-template-columns: 1fr 2.5vw 1fr;
   grid-row-gap: 50px;
+
+  @media (max-width: 1000px) {
+    width: 95vw;
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 35px;
+  }
 }
 
 .full-width {
   grid-column-start: 1;
   grid-column-end: 4;
+
+  @media (max-width: 700px) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
 }
 
 .left-half {
@@ -26,4 +40,7 @@
 
 .right-half {
   grid-column: 3;
+  @media (max-width: 700px) {
+    grid-column: 1;
+  }
 }

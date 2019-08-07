@@ -66,6 +66,9 @@ export default {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-column-gap: 1.5vw;
   grid-row-gap: 1.5vw;
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 .nail {
   position: relative;

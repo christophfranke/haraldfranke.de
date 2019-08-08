@@ -18,7 +18,7 @@ export default () => new Vuex.Store({
     navigation: (state, { content }) => content.find(doc => doc.type === 'site_navigation').data.pages,
     navEntries: (state, { navigation, page }) =>
       navigation.map(navigation => ({
-        title: navigation.name[0].text || (navigation.page.uid && page(navigation.page.uid).title[0].text),
+        title: (navigation.name && navigation.name[0].text) || (navigation.page.uid && page(navigation.page.uid).title[0].text),
         url: linkResolver(navigation.page)
       })).filter(({ url }) => url)
   },

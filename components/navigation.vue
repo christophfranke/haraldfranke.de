@@ -3,9 +3,9 @@
     <a @click="toggleMenu" href="#" class="nav-menu-toggle">
       <img :src="icon" class="menu-icon">
     </a>
-    <nav :class="visible && 'visible'">
+    <nav :class="visible && 'visible'" @click="closeMenu($event, 0)">
       <ul>
-        <li v-for="(entry, index) in navEntries">
+        <li v-for="(entry, index) in navEntries" @click="closeMenu($event, 350/2)">
           <nuxt-link :to="entry.url" v-html="entry.title"></nuxt-link>
         </li>
       </ul>
@@ -39,8 +39,11 @@ export default {
       e.preventDefault()
       this.visible = !this.visible
     },
-    closeMenu() {
-      this.visible = false;
+    closeMenu(e, delay = 0) {
+      e.stopPropagation()
+      setTimeout(() => {
+        this.visible = false
+      }, delay)
     },
     selectMenu() {
       this.closeMenu()

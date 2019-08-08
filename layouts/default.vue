@@ -12,7 +12,11 @@
 
     <transition name="page">
       <div class="shop-and-book" v-show="shopVisible">
-        <iframe class="book" type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://lesen.amazon.de/kp/card?asin=B07VH5Q2FG&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_4ygtDbNS7NE1X" ></iframe>
+        <div class="book">
+          <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://lesen.amazon.de/kp/card?asin=B07VH5Q2FG&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_4ygtDbNS7NE1X" ></iframe>
+          <img src="/amazon-logo.png" class="amazon-logo">
+          <br><a href="pdf.url" download v-if="pdf.url && pdf.label">{{ pdf.label }}</a>
+        </div>
         <div class="shop">
           <div id="my-store-17735022"></div>
         </div>
@@ -30,11 +34,18 @@ export default {
   computed: {
     shopVisible() {
       return this.$route.name === 'meister-eckart-shop'
+    },
+
+    pdf() {
+      return {
+        url: this.$store.getters.shop.die_lehren_meister_eckarts_pdf && this.$store.getters.shop.die_lehren_meister_eckarts_pdf.url,
+        label: this.$store.getters.shop.pdf_download_label && this.$store.getters.shop.pdf_download_label[0].text
+      }
     }
   },
 
   mounted() {
-    if (process.browser) {    
+    if (process.browser) {
       Ecwid.init()
       xSearch("id=my-search-17735022")
       xCategoriesV2("id=my-categories-17735022")
@@ -58,13 +69,31 @@ export default {
 }
 
 .book {
+  position: relative;
   margin-top: 17px;
   margin-right: 20px;
+  min-width: 336px;
+  text-align: center;
 
   @media (max-width: 600px) {
     margin: auto;
     margin-bottom: 20px;
   }
+
+  a {
+    font-size: 28px;
+    display: inline-block;
+    margin-top: 10px;  
+  }
+}
+
+.amazon-logo {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translateX(-50%);
+  width: 130px;
+  pointer-events: none;
 }
 
 .toolbar {

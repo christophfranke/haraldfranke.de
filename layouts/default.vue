@@ -94,6 +94,7 @@ export default {
   transform: translateX(-50%);
   width: 130px;
   pointer-events: none;
+  border: none;
 }
 
 .toolbar {

@@ -11,9 +11,11 @@
     <nuxt/>
 
     <transition name="page">
-      <div class="shop" v-show="shopVisible">
-        <div id="my-categories-17735022"></div>
-        <div id="my-store-17735022"></div>
+      <div class="shop-and-book" v-show="shopVisible">
+        <iframe class="book" type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://lesen.amazon.de/kp/card?asin=B07VH5Q2FG&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_4ygtDbNS7NE1X" ></iframe>
+        <div class="shop">
+          <div id="my-store-17735022"></div>
+        </div>
       </div>
     </transition>
   </div>
@@ -45,6 +47,25 @@ export default {
 
 <style lang="scss">
 @import '../style/global.scss';
+
+.shop-and-book {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
+}
+
+.book {
+  margin-top: 17px;
+  margin-right: 20px;
+
+  @media (max-width: 600px) {
+    margin: auto;
+    margin-bottom: 20px;
+  }
+}
 
 .toolbar {
   position: absolute;

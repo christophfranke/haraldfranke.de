@@ -15,7 +15,7 @@
         <div class="book">
           <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://lesen.amazon.de/kp/card?asin=B07VH5Q2FG&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_4ygtDbNS7NE1X" ></iframe>
           <img src="/amazon-logo.png" class="amazon-logo">
-          <br><a href="pdf.url" download v-if="pdf.url && pdf.label">{{ pdf.label }}</a>
+          <br><a :href="pdf.url" download target="_blank" v-if="pdf.url && pdf.label">{{ pdf.label }}</a>
         </div>
         <div class="shop">
           <div id="my-store-17735022"></div>

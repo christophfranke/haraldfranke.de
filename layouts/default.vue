@@ -46,10 +46,14 @@ export default {
 
   mounted() {
     if (process.browser) {
-      Ecwid.init()
-      xSearch("id=my-search-17735022")
-      xCategoriesV2("id=my-categories-17735022")
-      xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-17735022")
+      try {
+        Ecwid.init()
+        xSearch("id=my-search-17735022")
+        xCategoriesV2("id=my-categories-17735022")
+        xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-17735022")
+      } catch(err) {
+        this.$sentry.captureException(err);
+      }
     }
   }
 }

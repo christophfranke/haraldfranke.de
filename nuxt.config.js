@@ -13,6 +13,13 @@ export default {
   css: [
     'vue-pure-lightbox/dist/VuePureLightbox.css',
   ],
+  modules: [
+    '@nuxtjs/sentry',
+  ],
+  sentry: {
+    dsn: 'https://d6f24f44ea75435193efec91a1ac7453@sentry.io/1528721', // Enter your project's DSN here
+    // config: {}, // Additional config
+  },
   generate: {
     routes: !process.env.NOW_DEPLOYMENT && require('./util/routes').default
   }

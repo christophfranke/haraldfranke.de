@@ -14,7 +14,7 @@ export default {
     'vue-pure-lightbox/dist/VuePureLightbox.css',
   ],
   modules: [
-    '@nuxtjs/sentry',
+    '@nuxtjs/sentry'
   ],
   sentry: {
     dsn: 'https://d6f24f44ea75435193efec91a1ac7453@sentry.io/1528721', // Enter your project's DSN here
@@ -22,5 +22,9 @@ export default {
   },
   generate: {
     routes: !process.env.NOW_DEPLOYMENT && require('./util/routes').default
-  }
+  },
+  plugins: [{
+    src: '~/plugins/amplitude',
+    ssr: false
+  }]
 }

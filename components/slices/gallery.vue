@@ -60,6 +60,7 @@ export default {
 }
 </script>
 
+
 <style scoped lang="scss">
 .thumbnails {
   display: grid;
@@ -83,8 +84,22 @@ export default {
 }
 </style>
 
-<style>
-.lightbox__thumbnail img {
-  border: none;
+<style lang="scss">
+.lightbox {
+  &__element {
+    max-height: 80vh;
+  }
+
+  &__image img {  
+    max-width: calc(100% - 20px);
+    width: auto!important;
+    max-height: 80vh;
+    margin: auto;
+    display: block;
+  }
+
+  &__thumbnail img {
+    border: none;
+  }
 }
 </style>

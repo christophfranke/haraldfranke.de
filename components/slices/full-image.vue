@@ -29,7 +29,6 @@ export default {
 
 <style lang="scss">
 img {
-  border: 6px solid #880000;
   height: auto;
 
   &.full-width {
@@ -39,10 +38,10 @@ img {
   }
 
   &.left-half, &.right-half {
-  width: calc(100% - 12px);
-  display: block;
-  margin: 0 auto;
-}
+    width: calc(100% - 12px);
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 

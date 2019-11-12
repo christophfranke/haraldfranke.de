@@ -86,6 +86,8 @@ export default {
 
 <style lang="scss">
 .lightbox {
+  background: rgba(0,0,0,1);
+
   &__element {
     max-height: 80vh;
   }

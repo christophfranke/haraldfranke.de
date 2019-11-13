@@ -26,8 +26,9 @@
 
     <div class="modal" v-if="isModalOpen">
       <div class="modal__backdrop" @click="closeModal">
-        <div class="modal__window">
+        <div class="modal__window" @click.stop>
           <RichText :content="$store.getters.shop.donation_modal" />
+          <span class="modal__x" @click="closeModal">x</span>
         </div>
       </div>
     </div>
@@ -105,16 +106,39 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
   }
 
   &__window {
     max-height: 80vh;
     min-height: 250px;
-    width: 60vw;
+    width: 50vw;
     overflow-y: auto;
-    background: rgb(255, 255, 255);
-    padding: 20px;
-    color: black;
+    padding: 10px 30px 30px 30px;
+    background-color: $background-color;
+    border: 6px solid $image-border-color;
+    position: relative;
+    @media (max-width: 650px) {
+      width: 80vw;
+      margin: 0 10px;
+    }
+    @media (max-width: 400px) {
+      padding: 10px 10px 10px 10px;
+    }
+  }
+
+  &__x {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    &:hover {
+      filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.75));
+    }
   }
 }
 
@@ -172,7 +196,7 @@ export default {
 }
 
 body.modal-open {
-  overflow:hidden;
+  overflow: hidden;
   max-height: 100%;
 }
 
@@ -192,7 +216,7 @@ html#ecwid_html body#ecwid_body {
     }
 
     a:hover {
-      filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.75));    
+      filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.75));
     }
 
     .form-control {
@@ -207,12 +231,12 @@ html#ecwid_html body#ecwid_body {
     }
 
     .product-details img {
-      border: 6px solid #880000;
+      border: 6px solid $image-border-color;
       border-style: solid !important;
       width: calc(100% - 12px) !important;
     }
      .grid-product__image-wrap {
-      border: 6px solid #880000;
+      border: 6px solid $image-border-color;
     }
   }
 }

@@ -123,7 +123,9 @@ export default {
       margin: 0 10px;
     }
     @media (max-width: 400px) {
+      width: 100vw;
       padding: 10px 10px 10px 10px;
+      font-size: 18px;
     }
   }
 

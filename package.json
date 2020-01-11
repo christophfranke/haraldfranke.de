@@ -8,6 +8,9 @@
     "dev": "nuxt",
     "build": "nuxt generate"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {

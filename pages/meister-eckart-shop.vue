@@ -72,6 +72,30 @@ export default {
   border: none;
 }
 
+.book {
+  position: relative;
+  margin-top: 17px;
+  margin-right: 20px;
+  min-width: 336px;
+  text-align: center;
+
+  @media (max-width: 600px) {
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  a {
+    font-size: 28px;
+    display: inline-block;
+    margin-top: 10px;  
+  }
+}
+
+.donation a {
+  font-size: 20px;
+}
+
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity .3s;
 }

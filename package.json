@@ -11,13 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@nuxtjs/sentry": "^3.0.0",
-    "amplitude-js": "^5.2.2",
-    "node-sass": "^4.12.0",
-    "nuxt": "^2.8.1",
+    "@nuxtjs/sentry": "^3.0.1",
+    "amplitude-js": "^5.8.0",
+    "node-sass": "^4.13.0",
+    "nuxt": "^2.11.0",
     "prismic-dom": "^2.1.0",
-    "prismic-javascript": "^2.1.1",
-    "sass-loader": "^7.1.0",
+    "prismic-javascript": "^2.1.5",
+    "sass-loader": "^7.3.1",
     "vue-pure-lightbox": "^3.1.0"
   }
 }

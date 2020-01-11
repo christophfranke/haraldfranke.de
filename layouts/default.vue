@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="anchor">
     <Navigation />
     <nuxt/>
   </div>
@@ -19,6 +19,11 @@ export default {
 
 <style lang="scss">
 @import '../style/global.scss';
+
+.anchor {
+  position: relative;
+  width: 100%;
+}
 
 body.modal-open {
   overflow: hidden;

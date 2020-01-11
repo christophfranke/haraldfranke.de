@@ -5,6 +5,16 @@
   opacity: 0
 }
 
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  width: 100% !important;
+  border: none;
+}
+
 .main {
   max-width: 1000px;
   width: 80vw;

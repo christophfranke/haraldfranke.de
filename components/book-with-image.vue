@@ -1,6 +1,9 @@
 <template>
   <div class="book">
-    <PrismicImage :image="book.image" class="cover" />
+  	<a :href="book.book_page_link.url" target="_blank" class="link">
+	    <PrismicImage :image="book.image" class="cover" />
+	    <img src="/amazon-logo.png" class="amazon-logo" :style="logoStyle" v-if="book.logopositiontop">
+	  </a>
     <br><a :href="url" download target="_blank" v-if="url && label">{{ label }}</a>
     <br><span class="donation">Ich freue mich über eine <a href="#" @click.prevent="openModal">Spende</a></span>
 
@@ -46,11 +49,18 @@ export default {
   	url () {
   		return this.book.pdf_download.url
   	},
+  	logoStyle () {
+  		return {
+	  		top: `${this.book.logopositiontop}%`
+  		}
+  	}
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import '../style/global.scss';
+
 .book {
   max-width: 336px;
 }
@@ -60,4 +70,31 @@ export default {
 	height: auto;
 	border: none;
 }
+
+.link {
+	display: block;
+	position: relative;
+
+	transition: outline .2s;
+	outline: 6px solid transparent;
+	&:hover {
+		outline: 6px solid $image-border-color;
+	}
+}
+
+.amazon-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130px;
+  pointer-events: none;
+  border: none;
+
+  transition: opacity .2s;
+  opacity: 0;
+  .link:hover & {
+  	opacity: 1;
+  }
+}
+
 </style>

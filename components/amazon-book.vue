@@ -1,7 +1,9 @@
 <template>
   <div class="book">
-    <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" :src="iframe" ></iframe>
-    <img src="/amazon-logo.png" class="amazon-logo">
+  	<div class="cover">
+	    <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" :src="iframe" ></iframe>
+    	<img src="/amazon-logo.png" class="amazon-logo" :style="logoStyle" v-if="book.logopositiontop">
+	  </div>
     <br><a :href="url" download target="_blank" v-if="url && label">{{ label }}</a>
     <br><span class="donation">Ich freue mich über eine <a href="#" @click.prevent="openModal">Spende</a></span>
 
@@ -49,6 +51,11 @@ export default {
   	iframe () {
   		return this.book.amazon_integration?.url
   	},
+  	logoStyle () {
+  		return {
+	  		top: `${this.book.logopositiontop}%`
+  		}
+  	}
   }
 }
 </script>
@@ -57,11 +64,18 @@ export default {
 .amazon-logo {
   position: absolute;
   left: 50%;
-  top: 35%;
   transform: translateX(-50%);
   width: 130px;
   pointer-events: none;
   border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 8px 16px;
+
+  transition: opacity .2s;
+  opacity: 0;
+  .cover:hover & {
+  	opacity: 1;
+  }
 }
 
 .donation a {

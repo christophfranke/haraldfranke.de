@@ -35,9 +35,19 @@ export default {
 .grid {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 
   .item {
+    margin-top: 50px;
     width: 33%;
+
+    @media (max-width: 1000px) {
+      width: 50%;
+    }
+
+    @media (max-width: 700px) {
+      width: 100%;
+    }
   }
 }
 </style>

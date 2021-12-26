@@ -9,17 +9,17 @@
     "build": "nuxt generate"
   },
   "engines": {
-    "node": "12.x"
+    "node": "16.x"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@nuxtjs/sentry": "^3.0.1",
     "amplitude-js": "^5.8.0",
-    "node-sass": "^4.13.0",
     "nuxt": "^2.11.0",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.1.5",
+    "sass": "^1.45.1",
     "sass-loader": "^7.3.1",
     "vue-pure-lightbox": "^3.1.0"
   }

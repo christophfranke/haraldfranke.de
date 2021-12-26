@@ -95,6 +95,10 @@ export default {
   .link:hover & {
   	opacity: 1;
   }
+
+  @media (hover: none) {
+    opacity: 1;
+  }
 }
 
 </style>

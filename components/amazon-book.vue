@@ -76,6 +76,10 @@ export default {
   .cover:hover & {
   	opacity: 1;
   }
+
+  @media (hover: none) {
+  	opacity: 1;
+  }
 }
 
 .donation a {

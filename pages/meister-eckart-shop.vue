@@ -22,7 +22,6 @@ export default {
 
   computed: {    
     page() {
-      console.log(this.$store.getters.shop)
       return this.$store.getters.shop
     }
   }

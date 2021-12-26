@@ -3,4 +3,6 @@ export default {
   PrismicImage: () => import('./prismic-image.vue'),
   Slice: () => import('./slice.vue'),  
   Navigation: () => import('./navigation.vue'),
+  AmazonBook: () => import('./amazon-book.vue'),
+  DonationModal: () => import('./donation-modal.vue'),
 }

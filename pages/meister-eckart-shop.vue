@@ -1,12 +1,15 @@
 <template>
   <div>
     <RichText :content="page.title" className="full-width" />
-    <component
-      v-for="book in page.books"
-      :is="book.amazon_integration.url ? 'AmazonBook' : 'AmazonBook'"
-      :key="book.pdf_download.url"
-      :book="book"
-    />
+    <div class="grid">
+      <component
+        v-for="book in page.books"
+        :is="book.amazon_integration.url ? 'AmazonBook' : 'BookWithImage'"
+        :key="book.pdf_download.url"
+        :book="book"
+        class="item"
+      />
+    </div>
   </div>
 </template>
 
@@ -29,5 +32,12 @@ export default {
 <style lang="scss" scoped>
 @import '../style/global.scss';
 
+.grid {
+  display: flex;
+  justify-content: space-around;
 
+  .item {
+    width: 33%;
+  }
+}
 </style>

@@ -5,4 +5,5 @@ export default {
   Navigation: () => import('./navigation.vue'),
   AmazonBook: () => import('./amazon-book.vue'),
   DonationModal: () => import('./donation-modal.vue'),
+  BookWithImage: () => import('./book-with-image.vue'),
 }

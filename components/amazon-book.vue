@@ -1,14 +1,12 @@
 <template>
-	<div>
-    <div class="book">
-      <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" :src="iframe" ></iframe>
-      <img src="/amazon-logo.png" class="amazon-logo">
-      <br><a :href="url" download target="_blank" v-if="url && label">{{ label }}</a>
-      <br><span class="donation">Ich freue mich über eine <a href="#" @click.prevent="openModal">Spende</a></span>
-    </div>
+  <div class="book">
+    <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" :src="iframe" ></iframe>
+    <img src="/amazon-logo.png" class="amazon-logo">
+    <br><a :href="url" download target="_blank" v-if="url && label">{{ label }}</a>
+    <br><span class="donation">Ich freue mich über eine <a href="#" @click.prevent="openModal">Spende</a></span>
 
-    <DonationModal :isOpen="isModalOpen" @close="closeModal" />
-	</div>
+	  <DonationModal :isOpen="isModalOpen" @close="closeModal" />
+  </div>
 </template>
 
 <script>
@@ -49,20 +47,8 @@ export default {
   		return this.book.pdf_download.url
   	},
   	iframe () {
-  		console.log('iframe', this.book.amazon_integration?.url)
   		return this.book.amazon_integration?.url
   	},
-    page() {
-      console.log(this.$store.getters.shop)
-      return this.$store.getters.shop
-    },
-
-    pdf() {
-      return {
-        url: this.$store.getters.shop.die_lehren_meister_eckarts_pdf && this.$store.getters.shop.die_lehren_meister_eckarts_pdf_download.url,
-        label: this.$store.getters.shop.pdf_download_label && this.$store.getters.shop.pdf_download_label[0].text
-      }
-    }
   }
 }
 </script>
@@ -83,14 +69,12 @@ export default {
 }
 
 .book {
+	width: 100%;
   position: relative;
-  margin-top: 17px;
-  margin-right: 20px;
-  min-width: 336px;
+  max-width: 336px;
   text-align: center;
 
   @media (max-width: 600px) {
-    margin: auto;
     margin-bottom: 20px;
   }
 

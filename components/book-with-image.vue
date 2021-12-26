@@ -43,7 +43,6 @@ export default {
 
   computed: {  	
   	label () {
-  		console.log(this.book)
   		return this.book.pdf_download_label1[0]?.text
   	},
   	url () {

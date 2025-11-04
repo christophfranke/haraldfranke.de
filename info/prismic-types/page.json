@@ -1,0 +1,160 @@
+{
+  "Main": {
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Title"
+      }
+    },
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "url"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {},
+        "choices": {
+          "image": {
+            "type": "Slice",
+            "fieldset": "Image",
+            "description": "A full width image",
+            "icon": "image",
+            "display": "list",
+            "non-repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 1200
+                  },
+                  "thumbnails": [
+                    {
+                      "name": "small",
+                      "width": 500,
+                      "height": null
+                    }
+                  ],
+                  "label": "Image"
+                }
+              },
+              "layout": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "Full Width",
+                    "Left Half",
+                    "Right Half",
+                    "Background Image"
+                  ],
+                  "default_value": "Full Width",
+                  "label": "Layout"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "poem": {
+            "type": "Slice",
+            "fieldset": "Poem",
+            "description": "A centered text",
+            "icon": "all_inclusive",
+            "display": "list",
+            "non-repeat": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,heading2,strong,em,hyperlink,list-item,o-list-item,o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "Text"
+                }
+              },
+              "layout": {
+                "type": "Select",
+                "config": {
+                  "options": ["Full Width", "Left Half", "Right Half"],
+                  "default_value": "Full Width",
+                  "label": "Layout"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "text": {
+            "type": "Slice",
+            "fieldset": "Text",
+            "description": "A Paragraph of Text",
+            "icon": "format_align_left",
+            "display": "list",
+            "non-repeat": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,heading2,strong,em,hyperlink,list-item,o-list-item",
+                  "allowTargetBlank": true,
+                  "label": "Text"
+                }
+              },
+              "layout": {
+                "type": "Select",
+                "config": {
+                  "options": ["Full Width", "Left Half", "Right Half"],
+                  "default_value": "Full Width",
+                  "label": "Layout"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "gallery": {
+            "type": "Slice",
+            "fieldset": "Gallery",
+            "description": "Image Gallery",
+            "icon": "collections",
+            "display": "grid",
+            "non-repeat": {},
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 1800
+                  },
+                  "thumbnails": [
+                    {
+                      "name": "preview",
+                      "width": 150,
+                      "height": 150
+                    }
+                  ],
+                  "label": "Image"
+                }
+              }
+            }
+          },
+          "video": {
+            "type": "Slice",
+            "fieldset": "Video",
+            "description": "Video Embed",
+            "icon": "ondemand_video",
+            "non-repeat": {
+              "video_embed": {
+                "type": "Embed",
+                "fieldset": "Video Embed",
+                "config": {
+                  "label": "Video Embed",
+                  "placeholder": "Paste your video URL (YouTube, Vimeo, etc.)"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -96,6 +96,7 @@ Slice components are in `components/slices/` and registered via `components/slic
 - Uses SASS/SCSS (node-sass + sass-loader)
 - Global styles in `style/global.scss`
 - Component-scoped styles in `.vue` files
+- **Grid Layout**: Main page container uses 3-column grid (`grid-template-columns: 1fr 2.5vw 1fr`). Full-width slice components must use `grid-column: 1 / -1` to span all columns, otherwise they'll be hidden/cut off
 
 ### Third-Party Services
 

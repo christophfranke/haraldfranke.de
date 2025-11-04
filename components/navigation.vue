@@ -53,7 +53,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../style/global.scss';
+@use '../style/global.scss' as *;
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity .35s;
@@ -82,7 +82,7 @@ li {
     padding-right: 0;
     border-right: 0;
   }
-  
+
   a {
     font-size: 18px;
     text-decoration: none;

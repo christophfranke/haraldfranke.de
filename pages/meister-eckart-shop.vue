@@ -20,7 +20,7 @@ export default {
   name: 'Shop',
   components,
 
-  computed: {    
+  computed: {
     page() {
       return this.$store.getters.shop
     }
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../style/global.scss';
+@use '../style/global.scss' as *;
 
 .grid {
   display: flex;

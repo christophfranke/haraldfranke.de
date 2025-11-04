@@ -9,18 +9,18 @@
     "build": "nuxt generate"
   },
   "engines": {
-    "node": "16.x"
+    "node": "20.x"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@nuxtjs/sentry": "^3.0.1",
-    "amplitude-js": "^5.8.0",
-    "nuxt": "^2.11.0",
-    "prismic-dom": "^2.1.0",
-    "prismic-javascript": "^2.1.5",
-    "sass": "^1.45.1",
-    "sass-loader": "^7.3.1",
+    "@nuxtjs/sentry": "^8.0.7",
+    "amplitude-js": "^8.21.9",
+    "nuxt": "^2.18.1",
+    "prismic-dom": "^2.2.7",
+    "prismic-javascript": "^3.0.2",
+    "sass": "^1.69.5",
+    "sass-loader": "^10.5.2",
     "vue-pure-lightbox": "^3.1.0"
   }
 }

@@ -38,10 +38,10 @@ export default {
     closeModal() {
       this.isModalOpen = false
       document.body.classList.remove('modal-open')
-    }    
+    }
   },
 
-  computed: {  	
+  computed: {
   	label () {
   		return this.book.pdf_download_label1[0]?.text
   	},
@@ -58,7 +58,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../style/global.scss';
+@use '../style/global.scss' as *;
 
 .book {
   max-width: 336px;

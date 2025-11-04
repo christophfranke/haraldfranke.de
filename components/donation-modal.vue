@@ -8,7 +8,7 @@
         </div>
       </div>
     </div>
-  </transition>	
+  </transition>
 </template>
 
 <script>
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../style/global.scss';
+@use '../style/global.scss' as *;
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity .3s;
@@ -84,5 +84,5 @@ export default {
       filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.75));
     }
   }
-}	
+}
 </style>

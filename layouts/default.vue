@@ -18,7 +18,7 @@ export default {
 
 
 <style lang="scss">
-@import '../style/global.scss';
+@use '../style/global.scss';
 
 .anchor {
   position: relative;

@@ -1,4 +1,4 @@
-@import 'color';
-@import 'fonts';
-@import 'tags';
-@import 'classes';
+@forward 'color';
+@forward 'fonts';
+@forward 'tags';
+@forward 'classes';

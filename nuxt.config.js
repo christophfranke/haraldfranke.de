@@ -25,7 +25,7 @@ export default {
     transpile: ["amplitude-js", "query-string", "filter-obj"],
   },
   generate: {
-    routes: !process.env.NOW_DEPLOYMENT && require("./util/routes").default,
+    routes: !process.env.VERCEL && require("./util/routes").default,
   },
   plugins: [
     {
